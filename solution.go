@@ -6,4 +6,5 @@ type Solution interface {
 	Mutate()
 	Combine(Solution) (Solution, Solution)
 	Copy() Solution
+	Randomize()
 }

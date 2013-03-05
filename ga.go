@@ -17,6 +17,7 @@ type Ga struct {
 func New(size int) (ga *Ga) {
 	population := make([]Solution, size)
 	ga = &Ga{population, nil, -999999, 0, 0.01, 0.1, 3}
+	ga.Randomize()
 	ga.Evaluate()
 	return
 }
@@ -28,6 +29,12 @@ func (ga *Ga) Step() Solution {
 	ga.Evaluate()
 	ga.generation++
 	return ga.best
+}
+
+func (ga *Ga) Randomize() {
+	for _, solution := range ga.population {
+		solution.Randomize()
+	}
 }
 
 func (ga *Ga) Evaluate() {
