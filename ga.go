@@ -16,7 +16,7 @@ type Ga struct {
 
 func New(size int) (ga *Ga) {
 	population := make([]Solution, size)
-	ga = &Ga{population, nil, -999999, 0, 0.01, 0.1, 3}
+	ga = &Ga{population, nil, -999999, 0, 0.1, 0.2, 3}
 	ga.Randomize()
 	ga.Evaluate()
 	return
