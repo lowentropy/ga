@@ -1,9 +1,9 @@
 package ga
 
 type Solution interface {
-	EvaluateFitness()
+	Evaluate()
 	Fitness() float64
 	Mutate()
+	Combine(Solution) (Solution, Solution)
 	Copy() Solution
-	Combine(*Solution) (Solution, Solution)
 }
